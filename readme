@@ -1,3 +1,23 @@
 
+cosine.py                        -- return cosine similarities between two users or items. 
+euclidean.py                     -- return euclidean similarities between two users or items. 
+pearson.py                       -- return pearson similarities between two users or items. 
+crossvalidation.py               -- get crossvalidated training and test datasets.
+dataformat.py                    -- change the movielens datasets into a dictionary, 
+                                     {user1: {movie1name: rate1, movie2name: rate2, ...}, user2: {}, ...}
+mae.py                           -- return the model's prediction accuracy.
+mean.py                          -- return means of items or users. 
+                                    {user1: mean1, user2: mean2, ...}, or {item1: mean1, item2: mean2, ...}
+neighbor.py                      -- return neighbors and corresponding similarities of a set of users or items. 
+                                    {user1:{neighbor1: similarity1, neighbor2: similarity2, ...}, user2: {}, ...}
 
-babbbbbbb
+recommender.py                   -- return recommdendations for users in the dataset.
+                                    {user1:{recommended movies1: score1, ...}, user2: {}, ...}
+recommendations_all              -- return recommendations for users in different datasets respectively. 
+                                    model1: {user1: {recommendation1: score1, ...}, user2: {}, ...}
+                                    model2: ...
+                                    model3: ...
+                                    ...
+suirsimilarity.py                -- return the sum of related similarities in different models. 
+topmatches.py                    -- return top neighbors for users.
+5.5.py                           -- return MAE for different models. 
