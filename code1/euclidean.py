@@ -19,13 +19,3 @@ def euclidean_sim(data, person1, person2):
     sim = 1 / (1 + sqrt(sumSq))
     return sim
 
-
-mydict = {'carl': 40, 'alan': 2, 'bob': 1,
-          'danny': 3}
-
-a = sorted(mydict.iteritems(), key=lambda (k, v): (v, k), reverse=True)
-b = sorted(mydict.iteritems(), key=lambda (k, v): (v, k), reverse=True)[0:2]
-c = dict(b)
-print a
-print b
-print c
