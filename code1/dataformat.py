@@ -1,7 +1,4 @@
 # -*-coding:utf-8-*-
-# These are the codes for formatting the data sets.
-# In this model, we only use u.data and u.item information.
-# We turn the data sets into a dic.
 # {user1:{movie1: rating, movie2: rating, ...}, user2:{movie1:rating, ...}, ...}
 
 from random import shuffle
