@@ -78,14 +78,3 @@ def sim_sum_sur_all(data, user_neighbor):
                                                user_neighbor=user_neighbor)
     return k_m_sim
 
-
-'''
-data_843_ob_5 = json.load(open("data_843_ob_5.txt"))
-user_means_ob_5_843 = json.load(open("user_means_ob_5_843.txt"))
-item_means_ob_5_843 = json.load(open("item_means_ob_5_843.txt"))
-user_neighbor_ob_5_843 = json.load(open("user_neighbor_ob_5_843.txt"))
-item_neighbor_ob_5_843 = json.load(open("item_neighbor_ob_5_843.txt"))
-print sim_sum_sur_all(data_843_ob_5, user_neighbor_ob_5_843)
-print sim_sum_sur_all(data_843_ob_5, user_neighbor_ob_5_843).keys()
-print sim_sum_sur_all(data_843_ob_5, user_neighbor_ob_5_843)['480']
-'''
