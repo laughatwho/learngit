@@ -1,4 +1,5 @@
 # -*-coding:utf-8-*-
+# We turn movielens datasets into: 
 # {user1:{movie1: rating, movie2: rating, ...}, user2:{movie1:rating, ...}, ...}
 
 from random import shuffle
