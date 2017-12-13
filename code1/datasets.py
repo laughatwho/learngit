@@ -19,7 +19,6 @@ start = time.time()
 data = format_movie_lens()
 item_data = transforms(data)
 
-# test data for 843 users
 data_843 = split_data(data, n_user=843)
 ob_5 = ob_held(data_843, n_observed=5)
 ob_10 = ob_held(data_843, n_observed=10)
@@ -57,8 +56,6 @@ json.dump(data_843_held_5_ob_5_ui, open("data_843_held_5_ob_5_ui.txt", 'w'))
 json.dump(data_843_held_10_ob_5_ui, open("data_843_held_10_ob_5_ui.txt", 'w'))
 json.dump(data_843_held_20_ob_5_ui, open("data_843_held_20_ob_5_ui.txt", 'w'))
 
-# print 'share users', len(users)
-# print len(data_843_held_5)
 
 data_843_held_free_ob_10 = ob_10[1]
 i_data_843_held_free_ob_10 = transforms(data_843_held_free_ob_10)
