@@ -1,12 +1,8 @@
 # -*-coding:utf-8-*-
 
-import time
 import json
 from recommender import recommendation_all
 
-start_time = time.time()
-
-'''
 # user sparsity:5, SF2: a=0.7, b=0.7
 data_843_ob_5 = json.load(open("data_843_ob_5.txt"))
 user_means_ob_5_843 = json.load(open("user_means_ob_5_843.txt"))
@@ -117,8 +113,7 @@ recommends_ob_20_843_sf1 = recommendation_all(data_843_ob_20, 50,
                                               b=0)
 
 json.dump(recommends_ob_20_843_sf1, open("recommends_ob_20_843_sf1.txt", 'w'))
-'''
-'''
+
 # user sparsity:5, IBCF: a=0, b=0
 recommends_ob_5_843_ibcf = recommendation_all(data_843_ob_5, 50,
                                               user_neighbor_ob_5_843,
@@ -132,7 +127,6 @@ recommends_ob_5_843_ibcf = recommendation_all(data_843_ob_5, 50,
 json.dump(recommends_ob_5_843_ibcf, open("recommends_ob_5_843_ibcf.txt", 'w'))
 
 
-# user sparsity: 10, IBCF: a=0, b=0
 recommends_ob_10_843_ibcf = recommendation_all(data_843_ob_10, 50,
                                                user_neighbor_ob_10_843,
                                                item_neighbor_ob_10_843,
@@ -190,7 +184,7 @@ recommends_ob_20_843_ubcf = recommendation_all(data_843_ob_20, 50,
                                                a=1,
                                                b=0)
 json.dump(recommends_ob_20_843_ubcf, open("recommends_ob_20_843_ubcf.txt", 'w'))
-'''
+
 
 # number of training user: 200
 # user sparsity:5, SF2: a=0.7, b=0.7
