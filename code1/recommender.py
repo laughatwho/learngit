@@ -3,7 +3,7 @@
 import time
 from math import sqrt
 import json
-from suirsimilarity import sim_sum_sir_all
+import suirsimilarity *
 
 
 def recommendation(data, n_item, given_person, user_neighbor, item_neighbor, user_mean,  item_mean, suir_sim, sir_sim, 
