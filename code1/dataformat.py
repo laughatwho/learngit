@@ -1,6 +1,4 @@
-# -*-coding:utf-8-*-
-# We turn movielens datasets into: 
-# {user1:{movie1: rating, movie2: rating, ...}, user2:{movie1:rating, ...}, ...}
+
 
 from random import shuffle
 
@@ -8,13 +6,10 @@ from random import shuffle
 def format_movie_lens(filepath='/Users/sanxi/Desktop/ml_unify'):
 
     movie = {}
-    # 获取影片标题。u.item记录着影片id与影片名映射信息
     for line in file(filepath + '/u.item'):
-        # 去除数据中的噪音。
         title = '|' in line
         if title == 1:
             (ids, name) = line.split("|")[0:2]
-            # set up dict movie
             movie[ids] = name
     resultdata = {}
     for line in file(filepath + '/u.data'):
@@ -26,24 +21,12 @@ def format_movie_lens(filepath='/Users/sanxi/Desktop/ml_unify'):
             resultdata[user][movietitle] = float(rating)
 
     return resultdata
-    #return movie
-
-
-'''
- 把用户-物品矩阵换成 物品-用户 矩阵 或 物品-用户 矩阵 换成 用户-物品 矩阵
-'''
-
-
-# def transforms(data):
-
 
 def transforms(data):
     new_data = {}
     for key, value in data.items():
         for key1, value1 in value.items():
-            # 初始化
             new_data.setdefault(key1, {})
-            # 物品与用户对调
             new_data[key1][key] = value1
     return new_data
 
@@ -94,8 +77,6 @@ def item_sparsity(i_data, n_item):
 def divide_data(data, n_folds=2):
     lists = dict_to_list(data)
     shuffle(lists)
-
-    # Get the number of interactions that each partition should have.
     partition_size = int(float(len(lists)/n_folds))
     # To store the fold lists.
     list_folds = list()
