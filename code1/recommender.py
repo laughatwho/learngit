@@ -6,17 +6,9 @@ import json
 from suirsimilarity import sim_sum_sir_all
 
 
-def recommendation(data,
-                   n_item,
-                   given_person,
-                   user_neighbor,
-                   item_neighbor,
-                   user_mean,
-                   item_mean,
-                   suir_sim,
-                   sir_sim,
-                   sur_sim,
-                   a=0, b=0):
+def recommendation(data, n_item, given_person, user_neighbor, item_neighbor, user_mean,  item_mean, suir_sim, sir_sim, 
+                   sur_sim,  a=0, b=0):
+                       
     if given_person not in data:
         return 0.
     target_neighbors = user_neighbor[given_person]
@@ -74,30 +66,16 @@ def recommendation(data,
     return k_m_n
 
 
-def recommendation_all(data,
-                       n_item,
-                       user_neighbor,
-                       item_neighbor,
-                       user_mean,
-                       item_mean,
-                       suir_similarity,
-                       sir_similarity,
-                       sur_similarity,
-                       a, b):
+def recommendation_all(data, n_item, user_neighbor, item_neighbor, user_mean,  item_mean, suir_similarity, sir_similarity, 
+                       sur_similarity, a, b):
+                  
     k_m_all = {}
     for user in data:
         k_m_all.setdefault(user, {})
-        k_m_all[user] = recommendation(data=data,
-                                       n_item=n_item,
-                                       given_person=user,
-                                       user_neighbor=user_neighbor,
-                                       item_neighbor=item_neighbor,
-                                       user_mean=user_mean,
-                                       item_mean=item_mean,
-                                       suir_sim=suir_similarity,
-                                       sir_sim=sir_similarity,
-                                       sur_sim=sur_similarity,
-                                       a=a,
-                                       b=b)
+        k_m_all[user] = recommendation(data=data, n_item=n_item, given_person=user, user_neighbor=user_neighbor,
+                                       item_neighbor=item_neighbor, user_mean=user_mean, item_mean=item_mean,                          
+                                       sir_sim=sir_similarity, suir_sim=suir_similarity, sur_sim=sur_similarity,
+                                       a=a,  b=b)
+                                       
     return k_m_all
 
