@@ -104,10 +104,8 @@ user_means_ob_5_843 = mean(data_843_ob_5)
 json.dump(item_means_ob_5_843, open("item_means_ob_5_843.txt", 'w'))
 json.dump(user_means_ob_5_843, open("user_means_ob_5_843.txt", 'w'))
 
-suir_sim_sum_ob_5_843 = sim_sum_suir_all(data=data_843_ob_5,
-                                         movie_neighbor=item_neighbor_ob_5_843,
-                                         user_neighbor=user_neighbor_ob_5_843,
-                                         )
+suir_sim_sum_ob_5_843 = sim_sum_suir_all(data=data_843_ob_5, movie_neighbor=item_neighbor_ob_5_843, 
+                                         user_neighbor=user_neighbor_ob_5_843)                                     
 json.dump(suir_sim_sum_ob_5_843, open("suir_sim_sum_ob_5_843.txt", 'w'))
 
 sir_sim_sum_ob_5_843 = sim_sum_sir_all(data=data_843_ob_5, movie_neighbor=item_neighbor_ob_5_843)
@@ -126,8 +124,7 @@ item_means_ob_10_843 = mean(i_data_843_ob_10)
 user_means_ob_10_843 = mean(data_843_ob_10)
 json.dump(item_means_ob_10_843, open("item_means_ob_10_843.txt", 'w'))
 json.dump(user_means_ob_10_843, open("user_means_ob_10_843.txt", 'w'))
-suir_sim_sum_ob_10_843 = sim_sum_suir_all(data=data_843_ob_10,
-                                          movie_neighbor=item_neighbor_ob_10_843,
+suir_sim_sum_ob_10_843 = sim_sum_suir_all(data=data_843_ob_10, movie_neighbor=item_neighbor_ob_10_843,                                          
                                           user_neighbor=user_neighbor_ob_10_843)
 json.dump(suir_sim_sum_ob_10_843, open("suir_sim_sum_ob_10_843.txt", 'w'))
 
@@ -148,8 +145,7 @@ user_means_ob_20_843 = mean(data_843_ob_20)
 json.dump(item_means_ob_20_843, open("item_means_ob_20_843.txt", 'w'))
 json.dump(user_means_ob_20_843, open("user_means_ob_20_843.txt", 'w'))
 
-suir_sim_sum_ob_20_843 = sim_sum_suir_all(data=data_843_ob_20,
-                                          movie_neighbor=item_neighbor_ob_20_843,
+suir_sim_sum_ob_20_843 = sim_sum_suir_all(data=data_843_ob_20, movie_neighbor=item_neighbor_ob_20_843,                                          
                                           user_neighbor=user_neighbor_ob_20_843)
 json.dump(suir_sim_sum_ob_20_843, open("suir_sim_sum_ob_20_843.txt", 'w'))
 
@@ -158,4 +154,4 @@ json.dump(sir_sim_sum_ob_20_843, open("sir_sim_sum_ob_20_843.txt", 'w'))
 
 sur_sim_sum_ob_20_843 = sim_sum_sur_all(data=data_843_ob_20, user_neighbor=user_neighbor_ob_20_843)
 json.dump(sur_sim_sum_ob_20_843, open("sur_sim_sum_ob_20_843.txt", 'w'))
-json.dump(sur_sim_sum_ob_20_843, open("sur_sim_sum_ob_20_843.txt", 'w'))
+
