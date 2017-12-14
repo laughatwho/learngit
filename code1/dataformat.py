@@ -1,5 +1,4 @@
 
-
 from random import shuffle
 
 
@@ -8,13 +7,13 @@ def format_movie_lens(filepath='/Users/sanxi/Desktop/ml_unify'):
     movie = {}
     for line in file(filepath + '/u.item'):
         title = '|' in line
-        if title == 1:
+        if title:
             (ids, name) = line.split("|")[0:2]
             movie[ids] = name
     resultdata = {}
     for line in file(filepath + '/u.data'):
         nonoise = '\t' in line
-        if nonoise == 1:
+        if nonoise:
             (user, movieId, rating) = line.split("\t")[0:3]
             resultdata.setdefault(user, {})
             movietitle = movie[movieId]
