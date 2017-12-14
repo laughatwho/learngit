@@ -20,16 +20,15 @@ def sim_sum_suir_individual(data, user, movie_neighbor, user_neighbor):
                         sim_suir_sum.setdefault(movie, 0)
                         sim_suir_sum[movie] += sim
 
-    return sim_suir_sum
+   return sim_suir_sum
 
 
 def sim_sum_suir_all(data, movie_neighbor, user_neighbor):
     sim_sum = {}
     for key in data.keys():
         sim_sum.setdefault(key, {})
-        sim_sum[key] = sim_sum_suir_individual(data=data, user=key,
-                                               movie_neighbor=movie_neighbor,
-                                               user_neighbor=user_neighbor)
+        sim_sum[key] = sim_sum_suir_individual(data=data, user=key, movie_neighbor=movie_neighbor, user_neighbor=user_neighbor)
+                                                                                            
     return sim_sum
 
 
@@ -64,8 +63,8 @@ def sim_sum_sur_individual(data, given_person, user_neighbor):
     for (userId, user_sim) in target_neighbors.items():
         movies_to_rate_user = [movie for movie in data[userId] if movie not in data[given_person]]
         for movie_user in movies_to_rate_user:
-                    k_m_sur.setdefault(movie_user, 0)
-                    k_m_sur[movie_user] += user_sim
+            k_m_sur.setdefault(movie_user, 0)
+            k_m_sur[movie_user] += user_sim
     return k_m_sur
 
 
@@ -73,8 +72,7 @@ def sim_sum_sur_all(data, user_neighbor):
     k_m_sim = {}
     for user in data:
         k_m_sim.setdefault(user, {})
-        k_m_sim[user] = sim_sum_sur_individual(data=data,
-                                               given_person=user,
-                                               user_neighbor=user_neighbor)
+        k_m_sim[user] = sim_sum_sur_individual(data=data, given_person=user, user_neighbor=user_neighbor)
+                                                                                             
     return k_m_sim
 
