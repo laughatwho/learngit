@@ -3,6 +3,7 @@
 from __future__ import division
 from math import sqrt
 
+
 def pearson_sim(data, person1, person2):
     commonmovies = []
     for movie in data[person1]:
