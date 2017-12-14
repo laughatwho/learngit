@@ -2,24 +2,24 @@
 from random import shuffle
 
 
-def format_movie_lens(filepath='/Users/sanxi/Desktop/ml_unify'):
+def format_movie_lens(file_path='/Users/sanxi/Desktop/ml_unify'):
 
     movie = {}
-    for line in file(filepath + '/u.item'):
+    for line in file(file_path + '/u.item'):
         title = '|' in line
         if title:
             (ids, name) = line.split("|")[0:2]
             movie[ids] = name
-    resultdata = {}
-    for line in file(filepath + '/u.data'):
-        nonoise = '\t' in line
-        if nonoise:
+    result_data = {}
+    for line in file(file_path + '/u.data'):
+        no_noise = '\t' in line
+        if no_noise:
             (user, movieId, rating) = line.split("\t")[0:3]
-            resultdata.setdefault(user, {})
-            movietitle = movie[movieId]
-            resultdata[user][movietitle] = float(rating)
+            result_data.setdefault(user, {})
+            movie_title = movie[movieId]
+            result_data[user][movie_title] = float(rating)
 
-    return resultdata
+    return result_data
 
 def transforms(data):
     new_data = {}
